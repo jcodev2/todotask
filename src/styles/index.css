@@ -1,0 +1,303 @@
+/* **************** Fluid Text **************** */
+/* todo: https://utopia.fyi/type/calculator/ */
+:root {
+  /* Customize */
+  --step--2: clamp(0.74rem, 0.75rem + -0.05vw, 0.7rem);
+  --step--1: clamp(0.89rem, 0.87rem + 0.07vw, 0.94rem);
+  --step-0: clamp(1.06rem, 1.01rem + 0.25vw, 1.25rem);
+  --step-1: clamp(1.28rem, 1.17rem + 0.53vw, 1.67rem);
+  --step-2: clamp(1.53rem, 1.34rem + 0.94vw, 2.22rem);
+  --step-3: clamp(1.84rem, 1.53rem + 1.52vw, 2.96rem);
+  --step-4: clamp(2.2rem, 1.73rem + 2.36vw, 3.95rem);
+  --step-5: clamp(2.64rem, 1.93rem + 3.55vw, 5.26rem);
+}
+
+/* **************** Custom Properties **************** */
+:root {
+  --first-color: #fefefe;
+  --second-color: #323232;
+}
+:root {
+  --max-width: 1200px;
+}
+
+/* **************** Reset **************** */
+/* ? Html */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ? Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  overflow-x: hidden;
+}
+
+/* ? Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+/* ? Form */
+form {
+  margin: 0;
+  padding: 0;
+}
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+/* ? Multi Media */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ? Links */
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.75;
+}
+
+/* ? List */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+/* ? Paragraphs */
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* **************** Components **************** */
+/* ? Container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+/* **************** Utilities **************** */
+/* ? Fluid text */
+.fluid-5 {
+  font-size: var(--step-5);
+}
+.fluid-4 {
+  font-size: var(--step-4);
+}
+.fluid-3 {
+  font-size: var(--step-3);
+}
+.fluid-2 {
+  font-size: var(--step-2);
+}
+.fluid-1 {
+  font-size: var(--step-1);
+}
+.fluid-0 {
+  font-size: var(--step-0);
+}
+.fluid--1 {
+  font-size: var(--step--1);
+}
+.fluid--2 {
+  font-size: var(--step--2);
+}
+
+/* ? Aling Text */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* ? Font weight */
+.font-w-400 {
+  font-weight: 400;
+}
+.font-w-600 {
+  font-weight: 600;
+}
+
+/* ? Margin */
+.m-0 {
+  margin: 0;
+}
+.m-1 {
+  margin: 0.25rem;
+}
+.m-2 {
+  margin: 0.5rem;
+}
+
+/* **************** Site Styles **************** */
+/* ? Banner */
+.task-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0070f3;
+  color: #fff;
+  padding: 0.75rem;
+}
+.task-banner h1 {
+  font-size: var(--step-2);
+  font-weight: 600;
+}
+
+/* ? Table */
+.task-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 1rem 0;
+}
+.task-table .task-header {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.task-header > tr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.task-header > tr > th {
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--second-color);
+}
+.task-table .task-body {
+  width: 100%;
+}
+.task-body > tr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #ccc;
+}
+.task-body > tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.task-body > tr > td {
+  font-size: var(--step-0);
+  font-weight: 400;
+  color: var(--second-color);
+}
+.task-body > tr > td.done {
+  text-decoration: line-through;
+}
+
+/* ? Task Count */
+.task-count {
+  padding: 0.75rem;
+}
+.task-count p {
+  font-size: var(--step-0);
+  font-weight: 600;
+}
+
+/* ? Task Creator */
+.task-creator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #d7f0fa;
+}
+.task-creator h2 {
+  font-size: var(--step-1);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.task-creator form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.task-creator label {
+  font-size: var(--step-0);
+  font-weight: 400;
+}
+.task-creator input {
+  font-size: var(--step--1);
+  font-weight: 600;
+  border: none;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 50%;
+  padding: 0.5rem;
+}
+.task-creator button {
+  font-size: var(--step--1);
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  background-color: #f56a6a;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* ? Scroll */
+::-webkit-scrollbar {
+  width: 0;
+}
